@@ -1,5 +1,6 @@
 -- netrw
 
+vim.cmd("let $FZF_DEFAULT_COMMAND=\'find . \\( -name node_modules -o -name .git -o -name env \\) -prune -o -print\'")
 vim.g.netrw_banner=0
 vim.g.netrw_liststyle=3
 
