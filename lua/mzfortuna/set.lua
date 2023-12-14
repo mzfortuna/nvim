@@ -1,6 +1,7 @@
--- netrw
+-- a/Users/mzfortuna/Movies/yt/InspiringPhilosophy/The Philosophy of Tolkien [TeF6lomaU3I].webmetrw
 
 vim.cmd("let $FZF_DEFAULT_COMMAND=\'find . \\( -name node_modules -o -name .git -o -name env \\) -prune -o -type f -print\'")
+
 vim.g.netrw_banner=0
 vim.g.netrw_liststyle=3
 
@@ -16,7 +17,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false

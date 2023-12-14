@@ -13,7 +13,10 @@ lsp.ensure_installed({
     "jsonls",
     "cssls",
     "eslint",
-    "sqlls"
+    "sqlls",
+    "templ",
+    "gopls",
+    "clangd",
 })
 
 local cmp = require('cmp')

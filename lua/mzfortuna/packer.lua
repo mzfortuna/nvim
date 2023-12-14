@@ -8,6 +8,7 @@ return require('packer').startup(
         use 'wbthomason/packer.nvim'
         use 'junegunn/goyo.vim'
         use 'morhetz/gruvbox'
+        use 'norcalli/nvim-colorizer.lua'
         use 'vim-airline/vim-airline'
         use 'tpope/vim-surround'
         use 'tpope/vim-commentary'
@@ -23,6 +24,11 @@ return require('packer').startup(
             config = function() require('aerial').setup() end
         }
         use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+        use({
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            after = "nvim-treesitter",
+            requires = "nvim-treesitter/nvim-treesitter",
+        })
         -- LSP zero
         use {
             'VonHeikemen/lsp-zero.nvim',
