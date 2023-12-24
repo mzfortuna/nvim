@@ -16,7 +16,6 @@ return require('packer').startup(
             "windwp/nvim-autopairs",
             config = function() require("nvim-autopairs").setup {} end
         }
-
         use { 'junegunn/fzf', run = ":call fzf#install()" }
         use { 'junegunn/fzf.vim' }
         use {
@@ -48,6 +47,7 @@ return require('packer').startup(
             {'hrsh7th/nvim-cmp'},     -- Required
             {'hrsh7th/cmp-nvim-lsp'}, -- Required
             {'L3MON4D3/LuaSnip'},     -- Required
+            {'saadparwaiz1/cmp_luasnip'}
         }
     }
     end

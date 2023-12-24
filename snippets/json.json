@@ -1,0 +1,7 @@
+{
+    "snippet": {
+        "prefix": "snippet",
+        "body": "\"${1:name}\": {\n\t\"prefix\": \"${2:prefix}\",\n\t\"body\": \"${3:body}\",\n\t\"description\": \"${4:description}\"\n}${0}",
+        "description": "Generates snippet in JSON."
+    }
+}

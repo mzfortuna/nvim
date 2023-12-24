@@ -1,0 +1,57 @@
+{
+    "Read JSON": {
+        "prefix": "rj",
+        "body": "with open(${1:path}, \"r\") as f:\n\t${2:variable} = json.loads(f.read())\n$0",
+        "description": "Generates code to read from JSON into variable."
+    },
+    "Write JSON": {
+        "prefix": "wj",
+        "body": "bwith open(${1:path}, \"r\") as f:\n\t${2:variable} = json.loads(f.read())\n$0",
+        "description": "Generates code to write dict to JSON file."
+    },
+    "logging.debug()": {
+        "prefix": "ld",
+        "body": "logging.debug(\"${1:msg}\")\n$0",
+        "description": "Shorcut to write debug log."
+    },
+    "logging.info()": {
+        "prefix": "li",
+        "body": "logging.info(\"${1:msg}\")\n$0",
+        "description": "Shorcut to write info log."
+    },
+    "logging.warning()": {
+        "prefix": "lw",
+        "body": "logging.warning(\"${1:msg}\")\n$0",
+        "description": "Shorcut to write warning log."
+    },
+    "logging.error()": {
+        "prefix": "le",
+        "body": "logging.error(\"${1:msg}\")\n$0",
+        "description": "Shorcut to write error log."
+    },
+    "logging.critical()": {
+        "prefix": "lc",
+        "body": "logging.critical(\"${1:msg}\")\n$0",
+        "description": "Shorcut to write critical log."
+    },
+    "AWS Lambda handler template": {
+        "prefix": "aws",
+        "body": "import os\nimport logging\n\n\nlogging.getLogger().setLevel(logging.INFO)\n\n\ndef lambda_handler(event, context):\n\t${1:...}$0",
+        "description": "Generate AWS Lambda handler template."
+    },
+    "Filtered list from an iterable": {
+        "prefix": "filter",
+        "body": "list(filter(lambda x: ${2:condition}, ${1:iterable}))$0",
+        "description": "Filter iterable and cast to list."
+    },
+    "for i in range(len(iterable))": {
+        "prefix": "rlen",
+        "body": "for i in range(len(${1:iterable})):\n\t${2:pass}\n$0",
+        "description": "For loop over range of an iterable."
+    },
+    "if __name__ == \"__main__\"": {
+        "prefix": "ifmain",
+        "body": "if __name__ == \"__main__\":\n\t${1:main()}$0",
+        "description": "Create implicitly all the code at the top level using the __name__ special variable."
+    }
+}

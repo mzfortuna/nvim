@@ -1,0 +1,7 @@
+{
+    "snippet": {
+        "prefix": "snippet",
+        "body": "s(\n{trig = \"${1:trigger}\", name = \"${2:name}\", dscr = \"${3:description}\"},\n{${4:body}}\n),",
+        "description": "LuaSnips code snippet in lua."
+    }
+}
