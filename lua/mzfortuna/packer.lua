@@ -36,5 +36,10 @@ return require('packer').startup(
         use 'hrsh7th/cmp-nvim-lsp' -- Required
         use 'L3MON4D3/LuaSnip'     -- Required
         use 'saadparwaiz1/cmp_luasnip'
+
+        -- Debugger
+        use 'mfussenegger/nvim-dap'
+        use 'rcarriga/nvim-dap-ui'
+        use 'mfussenegger/nvim-dap-python'
     end
 )
