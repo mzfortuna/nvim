@@ -24,7 +24,5 @@ require("luasnip/loaders/from_vscode").lazy_load({
   }
 })
 
-print(vim.fn.stdpath('config') .. '/snippets')
-
 ls.add_snippets(nil, {
 })
