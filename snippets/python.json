@@ -9,30 +9,35 @@
         "body": "bwith open(${1:path}, \"r\") as f:\n\t${2:variable} = json.loads(f.read())\n$0",
         "description": "Generates code to write dict to JSON file."
     },
-    "logging.debug()": {
+    "logger.debug()": {
         "prefix": "ld",
-        "body": "logging.debug(\"${1:msg}\")\n$0",
+        "body": "logger.debug(\"${1:msg}\")\n$0",
         "description": "Shorcut to write debug log."
     },
-    "logging.info()": {
+    "logger.info()": {
         "prefix": "li",
-        "body": "logging.info(\"${1:msg}\")\n$0",
+        "body": "logger.info(\"${1:msg}\")\n$0",
         "description": "Shorcut to write info log."
     },
-    "logging.warning()": {
+    "logger.warning()": {
         "prefix": "lw",
-        "body": "logging.warning(\"${1:msg}\")\n$0",
+        "body": "logger.warning(\"${1:msg}\")\n$0",
         "description": "Shorcut to write warning log."
     },
-    "logging.error()": {
+    "logger.error()": {
         "prefix": "le",
-        "body": "logging.error(\"${1:msg}\")\n$0",
+        "body": "logger.error(\"${1:msg}\")\n$0",
         "description": "Shorcut to write error log."
     },
-    "logging.critical()": {
+    "logger.critical()": {
         "prefix": "lc",
-        "body": "logging.critical(\"${1:msg}\")\n$0",
+        "body": "logger.critical(\"${1:msg}\")\n$0",
         "description": "Shorcut to write critical log."
+    },
+    "logger.exception()": {
+        "prefix": "lex",
+        "body": "logger.exception(\"${1:msg}\")\n$0",
+        "description": "Shorcut to write exception log."
     },
     "AWS Lambda handler template": {
         "prefix": "aws",
@@ -53,5 +58,10 @@
         "prefix": "ifmain",
         "body": "if __name__ == \"__main__\":\n\t${1:main()}$0",
         "description": "Create implicitly all the code at the top level using the __name__ special variable."
+    },
+    "Log handlers": {
+        "prefix": "log",
+        "body": "import logging\n\nlogging_format = (\n    \"[%(asctime)s,%(msecs)03d @ %(filename)s:%(lineno)d] %(levelname)s: %(message)s\"\n)\n\nformatter = logging.Formatter(logging_format)\n\nlogger = logging.getLogger(__name__)\nlogger.setLevel(logging.INFO)\n\n# logging_file = \"\"\n# file_handler = logging.FileHandler(logging_file)\n# file_handler.setFormatter(formatter)\n# logger.addHandler(file_handler)\n\nstream_handler = logging.StreamHandler()\nstream_handler.setLevel(logging.DEBUG)\nstream_handler.setFormatter(formatter)\nlogger.addHandler(stream_handler)$0",
+        "description": "Generates default logging set up with file and stream handlers."
     }
 }
